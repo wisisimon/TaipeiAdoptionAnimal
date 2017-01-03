@@ -23,4 +23,9 @@ Carthage/Build
 xcuserdata/
 *~
 
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
 
