@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0433C41E1E1CF7F800DB8C67 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433C41D1E1CF7F800DB8C67 /* DetailTableViewCell.swift */; };
 		04A7A7951E1BCA1100051F47 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7A7941E1BCA1100051F47 /* DetailViewController.swift */; };
 		04A7A7971E1CAB0000051F47 /* MasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7A7961E1CAB0000051F47 /* MasterTableViewCell.swift */; };
 		04D1BD451E161AA700B9D021 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D1BD441E161AA700B9D021 /* AppDelegate.swift */; };
@@ -14,9 +15,11 @@
 		04D1BD4A1E161AA700B9D021 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D1BD481E161AA700B9D021 /* Main.storyboard */; };
 		04D1BD4C1E161AA700B9D021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D1BD4B1E161AA700B9D021 /* Assets.xcassets */; };
 		04D1BD4F1E161AA700B9D021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D1BD4D1E161AA700B9D021 /* LaunchScreen.storyboard */; };
+		CDF74EBC04636A387B200AFC /* Pods_TaipeiAdoptionAnimal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C89FA7F908FB96F13997A7 /* Pods_TaipeiAdoptionAnimal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0433C41D1E1CF7F800DB8C67 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		04A7A7941E1BCA1100051F47 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		04A7A7961E1CAB0000051F47 /* MasterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterTableViewCell.swift; sourceTree = "<group>"; };
 		04D1BD411E161AA700B9D021 /* TaipeiAdoptionAnimal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaipeiAdoptionAnimal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +29,9 @@
 		04D1BD4B1E161AA700B9D021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04D1BD4E1E161AA700B9D021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04D1BD501E161AA700B9D021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53C89FA7F908FB96F13997A7 /* Pods_TaipeiAdoptionAnimal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaipeiAdoptionAnimal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96A096EDC29F54F0C7C9685A /* Pods-TaipeiAdoptionAnimal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaipeiAdoptionAnimal.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaipeiAdoptionAnimal/Pods-TaipeiAdoptionAnimal.release.xcconfig"; sourceTree = "<group>"; };
+		C25E39FB8C38AFBE090FE4C4 /* Pods-TaipeiAdoptionAnimal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaipeiAdoptionAnimal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaipeiAdoptionAnimal/Pods-TaipeiAdoptionAnimal.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDF74EBC04636A387B200AFC /* Pods_TaipeiAdoptionAnimal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +58,8 @@
 			children = (
 				04D1BD431E161AA700B9D021 /* TaipeiAdoptionAnimal */,
 				04D1BD421E161AA700B9D021 /* Products */,
+				9BB54CDD5F4DE4E981EAF189 /* Pods */,
+				7AF97AA4923E6645900FE36D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,12 +79,30 @@
 				04D1BD461E161AA700B9D021 /* MasterViewController.swift */,
 				04A7A7961E1CAB0000051F47 /* MasterTableViewCell.swift */,
 				04A7A7941E1BCA1100051F47 /* DetailViewController.swift */,
+				0433C41D1E1CF7F800DB8C67 /* DetailTableViewCell.swift */,
 				04D1BD481E161AA700B9D021 /* Main.storyboard */,
 				04D1BD4B1E161AA700B9D021 /* Assets.xcassets */,
 				04D1BD4D1E161AA700B9D021 /* LaunchScreen.storyboard */,
 				04D1BD501E161AA700B9D021 /* Info.plist */,
 			);
 			path = TaipeiAdoptionAnimal;
+			sourceTree = "<group>";
+		};
+		7AF97AA4923E6645900FE36D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53C89FA7F908FB96F13997A7 /* Pods_TaipeiAdoptionAnimal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BB54CDD5F4DE4E981EAF189 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C25E39FB8C38AFBE090FE4C4 /* Pods-TaipeiAdoptionAnimal.debug.xcconfig */,
+				96A096EDC29F54F0C7C9685A /* Pods-TaipeiAdoptionAnimal.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,9 +112,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04D1BD531E161AA700B9D021 /* Build configuration list for PBXNativeTarget "TaipeiAdoptionAnimal" */;
 			buildPhases = (
+				1F84015555A302AECEDCABF1 /* [CP] Check Pods Manifest.lock */,
 				04D1BD3D1E161AA700B9D021 /* Sources */,
 				04D1BD3E1E161AA700B9D021 /* Frameworks */,
 				04D1BD3F1E161AA700B9D021 /* Resources */,
+				05798D18D9091A24139FDC55 /* [CP] Embed Pods Frameworks */,
+				34BE81F3C766C9E70AD8B9E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,6 +176,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		05798D18D9091A24139FDC55 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TaipeiAdoptionAnimal/Pods-TaipeiAdoptionAnimal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1F84015555A302AECEDCABF1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		34BE81F3C766C9E70AD8B9E4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TaipeiAdoptionAnimal/Pods-TaipeiAdoptionAnimal-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04D1BD3D1E161AA700B9D021 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -154,6 +232,7 @@
 				04A7A7951E1BCA1100051F47 /* DetailViewController.swift in Sources */,
 				04D1BD471E161AA700B9D021 /* MasterViewController.swift in Sources */,
 				04D1BD451E161AA700B9D021 /* AppDelegate.swift in Sources */,
+				0433C41E1E1CF7F800DB8C67 /* DetailTableViewCell.swift in Sources */,
 				04A7A7971E1CAB0000051F47 /* MasterTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +352,7 @@
 		};
 		04D1BD541E161AA700B9D021 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C25E39FB8C38AFBE090FE4C4 /* Pods-TaipeiAdoptionAnimal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImageAllDevice;
@@ -287,6 +367,7 @@
 		};
 		04D1BD551E161AA700B9D021 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96A096EDC29F54F0C7C9685A /* Pods-TaipeiAdoptionAnimal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImageAllDevice;

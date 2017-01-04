@@ -8,6 +8,10 @@
 
 
 import UIKit
+import SDWebImage
+
+let adoptionAnimalUrl = "http://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=f4a75ba9-7721-4363-884d-c3820b0b917c" // 臺北市開放認養動物 公開資料網址
+
 
 class MasterViewController: UIViewController, URLSessionDelegate, URLSessionDownloadDelegate,
 UITableViewDelegate, UITableViewDataSource{
@@ -21,7 +25,7 @@ UITableViewDelegate, UITableViewDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
         // 臺北市開放認養動物 公開資料網址
-        let url = URL(string: "http://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=f4a75ba9-7721-4363-884d-c3820b0b917c")
+        let url = URL(string: adoptionAnimalUrl)
         
         // 建立一般的session設定
         let sessionWithConfigure = URLSessionConfiguration.default
@@ -34,7 +38,6 @@ UITableViewDelegate, UITableViewDataSource{
         
         // 啟動或重新啟動下載動作
         dataTask.resume()
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +51,6 @@ UITableViewDelegate, UITableViewDataSource{
     
     
     // MARK: - Segues
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.mTableView.indexPathForSelectedRow {
@@ -59,7 +61,6 @@ UITableViewDelegate, UITableViewDataSource{
     }
     
     // MARK: - Table View
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -76,10 +77,9 @@ UITableViewDelegate, UITableViewDataSource{
         //顯示動物的暱稱於Table View中
         cell.nameLabel?.text = dataArray[indexPath.row]["Name"] as? String
         
-        //顯示動物縮圖
+        //顯示動物縮圖，採用非同步下載處理
         let fileUrl = NSURL(string: dataArray[indexPath.row]["ImageName"] as! String)
-        let imageData = try? Data(contentsOf: fileUrl as! URL)
-        cell.thumbnailImageView.image = UIImage(data: imageData!)
+        cell.thumbnailImageView.sd_setImage(with: fileUrl as! URL)
         
         return cell
     }
@@ -90,22 +90,19 @@ UITableViewDelegate, UITableViewDataSource{
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        
         do {
-            
-            //JSON資料處理
+            // JSON資料處理
             let dataDic = try JSONSerialization.jsonObject(with: Data(contentsOf: location), options: JSONSerialization.ReadingOptions.mutableContainers) as! [String:[String:AnyObject]]
             
-            //依據先前觀察的結構，取得result對應中的results所對應的陣列
+            // 依據先前觀察的結構，取得result對應中的results所對應的陣列
             dataArray = dataDic["result"]!["results"] as! [AnyObject]
             
-            //重新整理Table View
+            // 重新整理Table View
             self.mTableView.reloadData()
             
         } catch {
             print("URL Session Error!")
         }
-        
     }
 }
 
