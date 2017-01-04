@@ -20,17 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor(red:63/255.0, green:208/255.0, blue:146/255.0, alpha: 1)
         UINavigationBar.appearance().tintColor = UIColor.white
         
-        if let barFont = UIFont(name: "AvenirNextCondensed-DemiBold", size: 24.0) {
+        // UINavigationBar titleTextAttributes
+        if let barFont = UIFont(name: "AvenirNextCondensed-DemiBold", size: 20.0) {
             UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName:barFont]
         }
-        
+        // statusBarStyle
         UIApplication.shared.statusBarStyle = .lightContent
 
-        
-        
-        
-        
-        
         return true
     }
 
