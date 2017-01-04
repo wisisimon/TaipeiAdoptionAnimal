@@ -24,6 +24,27 @@ UITableViewDelegate, UITableViewDataSource{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let myView = UIView(frame: CGRect(x: 0, y: 0, width: 250, height: 44))
+        
+        // 使用 UIImageView(frame:) 建立一個 UIImageView
+        let myImageView = UIImageView(frame: CGRect(x: 20, y: 0, width: 50, height: 50))
+        // 使用 UIImage(named:) 放置圖片檔案
+        myImageView.image = UIImage(named: "logo.png")
+        
+        let myLabel = UILabel(frame: CGRect(x: 60, y: 0, width: 150, height: 44))
+        myLabel.text = "臺北市❤毛小孩"
+        // myLabel titleTextAttributes
+        if let titleFont = UIFont(name: "AvenirNextCondensed-DemiBold", size: 20.0) {
+            myLabel.font = titleFont
+            myLabel.textColor = UIColor.white
+        }
+        
+        myView.addSubview(myImageView)
+        myView.addSubview(myLabel)
+        
+        self.navigationController?.navigationBar.topItem?.titleView = myView
+        
+        
         // 臺北市開放認養動物 公開資料網址
         let url = URL(string: adoptionAnimalUrl)
         
