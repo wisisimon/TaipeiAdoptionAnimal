@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--臺北市毛小孩領養-->
+        <!--Master View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MasterViewController" customModule="TaipeiAdoptionAnimal" customModuleProvider="target" sceneMemberID="viewController">
@@ -76,7 +76,7 @@
                             <constraint firstAttribute="trailing" secondItem="FLT-t9-ARi" secondAttribute="trailing" id="WIA-ik-PiA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="臺北市毛小孩領養" id="xg7-Wb-KS9">
+                    <navigationItem key="navigationItem" id="xg7-Wb-KS9">
                         <barButtonItem key="backBarButtonItem" title=" " id="uDS-ud-CUQ"/>
                     </navigationItem>
                     <connections>

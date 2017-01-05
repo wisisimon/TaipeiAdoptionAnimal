@@ -18,6 +18,13 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //客製rightBarButtonItem
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "分享", style: .plain, target: self, action: #selector(self.shareClick(_:)))
+        
+        //設置rightBarButtonItem titleTextAttributes
+        if let barFont = UIFont(name: "AvenirNextCondensed-DemiBold", size: 18.0) {
+            navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName:barFont], for: UIControlState.normal)
+        }
         
         //設定Title
         self.title = thisAnimalDic?["Name"] as? String
@@ -176,4 +183,35 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
     }
+    
+    func shareClick(_ sender: AnyObject) {
+        let phoneString = thisAnimalDic?["Phone"] as? String
+        let mailString = thisAnimalDic?["Email"] as? String
+        let firstActivityItem = "臺北市揪❤毛小孩動物認養\n\n聯絡電話：\(phoneString! as String)\n\n聯絡Email：\(mailString! as String)\n"
+        
+        //Create the UIImage
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        let activityViewController : UIActivityViewController = UIActivityViewController(
+            activityItems: [firstActivityItem, image as Any], applicationActivities: nil)
+        
+        // Anything you want to exclude
+        activityViewController.excludedActivityTypes = [
+            UIActivityType.postToWeibo,
+            UIActivityType.print,
+            UIActivityType.assignToContact,
+            UIActivityType.saveToCameraRoll,
+            UIActivityType.addToReadingList,
+            UIActivityType.postToFlickr,
+            UIActivityType.postToVimeo,
+            UIActivityType.postToTencentWeibo
+        ]
+        
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    
 }

@@ -53,7 +53,7 @@ UITableViewDelegate, UITableViewDataSource{
         childImageView.image = UIImage(named: "logo.png")
         
         // 使用 UILabel(frame:) 建立一個UILabel
-        let childLabel = UILabel(frame: CGRect(x: 60, y: 0, width: 150, height: 44))
+        let childLabel = UILabel(frame: CGRect(x: 60, y: 0, width: 180, height: 44))
         
         if let titleFont = UIFont(name: "AvenirNextCondensed-DemiBold", size: 20.0) {
             // 設置Label 字型大小
@@ -61,7 +61,7 @@ UITableViewDelegate, UITableViewDataSource{
             // 設置Label 文字顏色
             childLabel.textColor = UIColor.white
             // 設置Label title
-            childLabel.text = "臺北市❤毛小孩"
+            childLabel.text = "臺北市揪❤毛小孩"
         }
         
         // 加入兩個childView
