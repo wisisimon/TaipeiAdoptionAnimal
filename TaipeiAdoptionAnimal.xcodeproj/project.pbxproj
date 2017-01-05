@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		040D62ED1E1E34D00071EB1F /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 040D62EC1E1E34D00071EB1F /* share.png */; };
 		0433C41E1E1CF7F800DB8C67 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433C41D1E1CF7F800DB8C67 /* DetailTableViewCell.swift */; };
 		0461F97F1E1D45F5003694B7 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0461F97E1E1D45F5003694B7 /* logo.png */; };
 		04A7A7951E1BCA1100051F47 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7A7941E1BCA1100051F47 /* DetailViewController.swift */; };
@@ -21,7 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		040D62EC1E1E34D00071EB1F /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 		0433C41D1E1CF7F800DB8C67 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		0461F97E1E1D45F5003694B7 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		04A7A7941E1BCA1100051F47 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +58,6 @@
 		0461F9801E1D4626003694B7 /* resource */ = {
 			isa = PBXGroup;
 			children = (
-				040D62EC1E1E34D00071EB1F /* share.png */,
 				0461F97E1E1D45F5003694B7 /* logo.png */,
 			);
 			name = resource;
@@ -184,7 +181,6 @@
 			files = (
 				0461F97F1E1D45F5003694B7 /* logo.png in Resources */,
 				04D1BD4F1E161AA700B9D021 /* LaunchScreen.storyboard in Resources */,
-				040D62ED1E1E34D00071EB1F /* share.png in Resources */,
 				04D1BD4C1E161AA700B9D021 /* Assets.xcassets in Resources */,
 				04D1BD4A1E161AA700B9D021 /* Main.storyboard in Resources */,
 			);
