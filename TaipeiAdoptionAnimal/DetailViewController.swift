@@ -24,9 +24,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         //取得圖片網址
         let fileUrl = NSURL(string: thisAnimalDic?["ImageName"] as! String)
-        if let fileUrl = fileUrl //如果有圖片網址，向伺服器請求圖片資料
-        {
-            //顯示動物圖，採用非同步下載處理
+        //如果有圖片網址，向伺服器請求圖片資料
+        if let fileUrl = fileUrl {
+            //顯示動物圖片，採用非同步下載處理
             self.animalImageView.sd_setImage(with: fileUrl as URL)
         }
         
@@ -47,7 +47,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     // MARK: - UITableView
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 18
     }
@@ -105,10 +104,28 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.valueLabel.text = thisAnimalDic?["Resettlement"] as? String
         case 13:
             cell.fieldLabel.text = "聯絡電話"
+            
+            //add gesture to your Label
+            let phoneTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.callPhone(_:)))
+            cell.valueLabel.tag = 991
+            cell.valueLabel.isUserInteractionEnabled = true
+            cell.valueLabel.addGestureRecognizer(phoneTapGesture)
+            //顯示電話號碼
             cell.valueLabel.text = thisAnimalDic?["Phone"] as? String
+            cell.valueLabel.textColor = UIColor.blue
+            
         case 14:
             cell.fieldLabel.text = "聯絡email:"
+            
+            //add gesture to your Label
+            let mailTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.sendMail(_:)))
+            cell.valueLabel.tag = 992
+            cell.valueLabel.isUserInteractionEnabled = true
+            cell.valueLabel.addGestureRecognizer(mailTapGesture)
+
+            //顯示EMAIL
             cell.valueLabel.text = thisAnimalDic?["Email"] as? String
+            cell.valueLabel.textColor = UIColor.blue
         case 15:
             cell.fieldLabel.text = "可否與其他孩童相處:"
             cell.valueLabel.text = thisAnimalDic?["ChildreAnlong"] as? String
@@ -128,8 +145,35 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-   
+    // 撥電話
+    func callPhone(_ sender: UITapGestureRecognizer) {
+        let phoneNumber = thisAnimalDic?["Phone"] as! String
+        if let callURL:NSURL = NSURL(string:"tel://\(phoneNumber)") {
+            if (UIApplication.shared.canOpenURL(callURL as URL)) {
+                UIApplication.shared.openURL(callURL as URL);
+            }
+            else {
+                // your number not valid
+                let tapAlert = UIAlertController(title: "訊息", message: "電話號碼有誤，請查明後在撥，謝謝。", preferredStyle: UIAlertControllerStyle.alert)
+                tapAlert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
+                self.present(tapAlert, animated: true, completion: nil)
+            }
+        }
+    }
     
-   
-    
+    // 寄信
+    func sendMail(_ sender: UITapGestureRecognizer) {
+        let mailString = thisAnimalDic?["Email"] as! String
+        if let mailURL:NSURL = NSURL(string:"mailto:\(mailString)") {
+            if (UIApplication.shared.canOpenURL(mailURL as URL)) {
+                UIApplication.shared.openURL(mailURL as URL);
+            }
+            else {
+                // your mail not valid
+                let tapAlert = UIAlertController(title: "訊息", message: "信箱有誤，無法寄信。", preferredStyle: UIAlertControllerStyle.alert)
+                tapAlert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
+                self.present(tapAlert, animated: true, completion: nil)
+            }
+        }
+    }
 }
