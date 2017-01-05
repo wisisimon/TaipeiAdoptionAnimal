@@ -189,11 +189,19 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let mailString = thisAnimalDic?["Email"] as? String
         let firstActivityItem = "臺北市揪❤毛小孩動物認養\n聯絡電話：\(phoneString! as String)\n聯絡Email：\(mailString! as String)\n"
         
-        //Create the UIImage
-        UIGraphicsBeginImageContext(view.frame.size)
-        view.layer.render(in: UIGraphicsGetCurrentContext()!)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
+        //screenshot 不包含NavigationBar
+//        UIGraphicsBeginImageContext(self.view.bounds.size)
+//        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+//        let image = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+        
+        //screenshot 包含NavigationBar
+        let screen = UIScreen.main
+        let window = UIApplication.shared.keyWindow
+        UIGraphicsBeginImageContextWithOptions(screen.bounds.size, false, 0);
+        window?.drawHierarchy(in: (window?.bounds)!, afterScreenUpdates: false)
+        let image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
         
         let activityViewController : UIActivityViewController = UIActivityViewController(
             activityItems: [firstActivityItem, image as Any], applicationActivities: nil)
